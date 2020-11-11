@@ -3,10 +3,7 @@ from aqt import gui_hooks, mw
 from aqt.utils import tooltip
 from aqt.qt import *
 from aqt.editor import Editor
-
-
 import time
-from aqt import mw
 from functools import lru_cache
 
 pressed_add_card_and_review = False
@@ -60,7 +57,7 @@ def added_note(note):
     i = 0
     for card in note.cards():
         i += 1
-        card.startTimer()
+        card.timerStarted = time.time() - get_config("time")
         if mw.col.schedVer() == 2:
             ease = 3
         else:
