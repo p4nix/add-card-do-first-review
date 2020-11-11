@@ -67,7 +67,7 @@ def added_note(note):
     def showTooltip():
         tooltip(f"""...and reviewed {i} card(s)!""", period=1000)
 
-    #dirty workaround for showing the timer after the the "Added" tooltip
+    # dirty workaround for showing the add-on tooltip after the the "Added" tooltip
     if get_config("show_tooltip"):
         _timer = QTimer()
         _timer.setSingleShot(True)
